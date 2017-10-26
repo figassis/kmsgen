@@ -59,10 +59,9 @@ exports.handler = (event, context, callback) => {
                     }));
                 } else {
                     if (keylist.Keys.length >= 50) {
-                        callback(JSON.stringify({
-                            "reason": "auth_error",
-                            "errors": "BVNK has created too many Keys! Please ask the administrator to delete a few. It might take a week."
-                        }));
+                        callback(null, {
+                            KeyAlias: 'alias/btc'
+                        });
                     } else {
                         // Get the object from the event and show its content type
                         var keyparams = {
